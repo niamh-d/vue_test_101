@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div>
     <div
       v-for="todo in todos"
@@ -17,8 +18,13 @@
 </template>
 
 <script>
+import Navbar from './components/Navbar.js'
 export default {
   name: 'TodoApp',
+
+  components: {
+    Navbar
+  },
 
   data() {
     return {
