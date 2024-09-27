@@ -14,7 +14,10 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
-  <Counter @increment="count = $event" />
+  <Counter @increment="increment" />
+  <div>
+    <p>Count: {{ count }}</p>
+  </div>
 </template>
 
 <script>
@@ -28,6 +31,7 @@ export default {
 
   data() {
     return {
+      count: 0,
       newTodo: '',
       todos: [
         {
@@ -40,6 +44,9 @@ export default {
   },
 
   methods: {
+    increment() {
+      this.count++
+    },
     createTodo() {
       this.todos.push({
         id: 2,
