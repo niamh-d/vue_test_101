@@ -4,9 +4,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
   methods: {
     handleClick() {
-      this.$emit('increment')
+      this.count++
+      this.$emit('increment', this.count)
     }
   }
 }

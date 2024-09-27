@@ -14,7 +14,7 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
-  <Counter @increment="increment" />
+  <Counter @increment="(newCount) => increment(newCount)" />
   <div>
     <p>Count: {{ count }}</p>
   </div>
@@ -44,8 +44,8 @@ export default {
   },
 
   methods: {
-    increment() {
-      this.count++
+    increment(newCount) {
+      this.count = newCount
     },
     createTodo() {
       this.todos.push({
