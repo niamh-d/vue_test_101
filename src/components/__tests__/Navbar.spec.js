@@ -1,6 +1,6 @@
-import { beforeEach, expect, it } from 'vitest'
+import { expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Navbar from '../Navbar.js'
+import Navbar from '../Navbar.vue'
 
 it('renders a profile link', () => {
   const wrapper = mount(Navbar)
