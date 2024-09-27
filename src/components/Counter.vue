@@ -12,7 +12,10 @@ export default {
   methods: {
     handleClick() {
       this.count++
-      this.$emit('increment', this.count)
+      this.$emit('increment', {
+        count: this.count,
+        isEven: this.count % 2 === 0
+      })
     }
   }
 }

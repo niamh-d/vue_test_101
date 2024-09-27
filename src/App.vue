@@ -14,9 +14,10 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
-  <Counter @increment="(newCount) => increment(newCount)" />
+  <Counter @increment="(newCountObj) => increment(newCountObj)" />
   <div>
     <p>Count: {{ count }}</p>
+    <p>Is Even: {{ isEven }}</p>
   </div>
 </template>
 
@@ -31,6 +32,7 @@ export default {
 
   data() {
     return {
+      isEven: true,
       count: 0,
       newTodo: '',
       todos: [
@@ -44,8 +46,9 @@ export default {
   },
 
   methods: {
-    increment(newCount) {
-      this.count = newCount
+    increment(newCountObj) {
+      this.count = newCountObj.count
+      this.isEven = newCountObj.isEven
     },
     createTodo() {
       this.todos.push({
