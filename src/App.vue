@@ -1,5 +1,4 @@
 <template>
-  <Navbar2 />
   <div>
     <div
       v-for="todo in todos"
@@ -15,15 +14,16 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
+  <Counter @increment="count = $event" />
 </template>
 
 <script>
-import Navbar2 from './components/Navbar2.vue'
+import Counter from './components/Counter.vue'
 export default {
   name: 'TodoApp',
 
   components: {
-    Navbar2
+    Counter
   },
 
   data() {
