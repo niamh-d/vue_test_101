@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Navbar2 />
   <div>
     <div
       v-for="todo in todos"
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+import Navbar2 from './components/Navbar2.vue'
 export default {
   name: 'TodoApp',
 
   components: {
-    Navbar
+    Navbar2
   },
 
   data() {
