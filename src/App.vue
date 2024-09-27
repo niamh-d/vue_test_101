@@ -14,26 +14,22 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
-  <Counter @increment="(newCountObj) => increment(newCountObj)" />
-  <div>
-    <p>Count: {{ count }}</p>
-    <p>Is Even: {{ isEven }}</p>
-  </div>
+  <Form @submit="(email) => submit(email)" />
+  <div>Email: {{ email }}</div>
 </template>
 
 <script>
-import Counter from './components/Counter.vue'
+import Form from './components/Form.vue'
 export default {
   name: 'TodoApp',
 
   components: {
-    Counter
+    Form
   },
 
   data() {
     return {
-      isEven: true,
-      count: 0,
+      email: '',
       newTodo: '',
       todos: [
         {
@@ -46,9 +42,8 @@ export default {
   },
 
   methods: {
-    increment(newCountObj) {
-      this.count = newCountObj.count
-      this.isEven = newCountObj.isEven
+    submit(email) {
+      this.email = email
     },
     createTodo() {
       this.todos.push({
