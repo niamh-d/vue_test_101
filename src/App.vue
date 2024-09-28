@@ -14,17 +14,16 @@
       <input data-test="new-todo" v-model="newTodo" />
     </form>
   </div>
-  <Form @submit="(email) => submit(email)" />
-  <div>Email: {{ email }}</div>
+  <ComplexForm />
 </template>
 
 <script>
-import Form from './components/Form.vue'
+import ComplexForm from './components/ComplexForm.vue'
 export default {
   name: 'TodoApp',
 
   components: {
-    Form
+    ComplexForm
   },
 
   data() {
@@ -42,9 +41,6 @@ export default {
   },
 
   methods: {
-    submit(email) {
-      this.email = email
-    },
     createTodo() {
       this.todos.push({
         id: 2,
